@@ -1,7 +1,7 @@
 
 #This is a negative example. It cannnot learn anything from the data, however, when I put the same code into tf 1.15.0,
 #bang, miracle happens! It all works out and the accuracy is 0.93.
-#If you got any clue why this piece wouldn't work out in Version 2.1.0, pls contact me at gutentagberry@qq.com.
+#If you got any clue why this piece wouldn't work out in Version 2.1.0, pls contact me at gutentagberry@qq.com. Appreciate a lot!
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 import numpy as np
