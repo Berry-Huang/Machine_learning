@@ -6,7 +6,7 @@ from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 np.random.seed(1234)
 BATCH_SIZE = 100
-LR = 0.001              # learning rate
+LR = 0.001              # learning rate, why 0.01 is not working here?
 test_x = mnist.test.images[:2000]
 test_y = mnist.test.labels[:2000]
 
@@ -40,7 +40,7 @@ pool1 = tf.layers.max_pooling2d(conv1, pool_size=2, strides=2) #14x14x16
 conv2 = tf.layers.conv2d(pool1, 32, 5, 1, 'same', activation=tf.nn.relu) #14x14x32
 pool2 = tf.layers.max_pooling2d(conv2, 2, 2) #7x7x32
 flat = tf.reshape(pool2, [-1, 7*7*32]) #-> 1d
-#layer1
+#layer1 实际使用时神经网络不能学到东西？
 #l1 = add_layer(flat, 7*7*32, 1024, activation_function=tf.nn.relu)
 #layer2
 # prediction = add_layer(l1, 1024, 10, activation_function=tf.nn.softmax)
